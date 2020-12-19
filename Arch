@@ -43,7 +43,7 @@ RUN python -m pip install -U pip
 RUN pip install wheel setuptools
 
 #Fizilion
-RUN pacman -Sy --noconfirm asciidocs \
+RUN pacman -Sy --noconfirm asciidoc \
                            aria2 \
                            base-devel \
 		           chromium \
