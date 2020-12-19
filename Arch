@@ -65,7 +65,7 @@ RUN rm -rf requirements.txt
 #megatools
 RUN wget https://megatools.megous.com/builds/megatools-1.10.3.tar.gz
 RUN tar -xzf *.tar.gz
-RUN cd megatools-1.10.3 && ./configure && make && make install cd ..
+RUN cd megatools-1.10.3 && ./configure && make && make install && cd ..
 RUN rm -rf megatools*
 
 #finalization
