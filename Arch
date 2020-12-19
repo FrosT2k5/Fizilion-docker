@@ -1,2 +1,43 @@
 FROM archlinux:latest
 
+#multilib
+RUN echo "[multilib]" >> /etc/pacman.conf && \
+    echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+
+#update repositories and upgrade dependencies
+RUN pacman -Syy --noconfirm
+RUN pacman -Syu --noconfirm
+RUN pacman -Sy --noconfirm bash \
+                           bzip2 \
+                           ca-certificates \
+		                   curl \
+		                   dirmngr \
+		                   dpkg \
+		                   findutils \
+		                   gcc \
+		                   git \
+		                   gnupg \
+		                   jq \
+		                   lib32-bzip2 \
+		                   lib32-glibc \
+		                   expat \
+		                   libffi \
+		                   libjpeg-turbo \
+		                   xz \
+		                   sqlite \
+		                   openssl \
+		                   libxml2 \
+		                   libxslt \
+		                   make \
+		                   musl \
+		                   neofetch \
+		                   netbase \
+		                   pv \
+		                   sudo \
+		                   tar \
+		                   wget \
+		                   xz-utils \
+		                   zip \
+		                   zlib
+		                   
+		                   
