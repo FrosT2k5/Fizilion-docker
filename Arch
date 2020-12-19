@@ -31,7 +31,6 @@ RUN pacman -Sy --noconfirm bash \
 		           make \
 		           musl \
 		           neofetch \
-		           netbase \
 		           pv \
 		           sudo \
 		           tar \
