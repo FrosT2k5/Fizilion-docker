@@ -2,9 +2,7 @@ FROM archlinux:latest
 
 #official repos
 RUN echo "[multilib]" >> /etc/pacman.conf && \
-    echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf && \
-    echo "[community-testing]" >> /etc/pacman.conf && \
-    echo "Include = /etc/pacman.d/mirrorlist" >>  /etc/pacman.conf
+    echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
 
 #update repositories and upgrade dependencies
 RUN pacman -Syy --noconfirm
