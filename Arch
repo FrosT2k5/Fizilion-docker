@@ -39,5 +39,30 @@ RUN pacman -Sy --noconfirm bash \
 		                   xz-utils \
 		                   zip \
 		                   zlib
-		                   
-		                   
+             
+# Python & Pypi
+RUN pacman -Sy python python-pip --noconfirm
+RUN python -m pip install -U pip
+RUN pip install wheel setuptools
+
+#Fizilion
+RUN pacman -Sy --noconfirm aria2 \
+		                   chromium \
+		                   expect \
+                           ffmpeg \
+		                   figlet \
+		                   freetype2 \
+		                   libevent \             
+		                   megatools \
+                           openssh \
+                           p7zip \
+		                   postgresql \
+		                   postgresql-libs
+
+#requirments
+ADD https://raw.githubusercontent.com/FrosT2k5/ProjectFizilion/dragon/requirements.txt requirements.txt	
+RUN pip install --no-cache-dir -r requirements.txt	
+RUN rm -rf requirements.txt
+
+#finalization
+CMD ["python3"]
