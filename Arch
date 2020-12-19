@@ -50,7 +50,7 @@ RUN pacman -Sy --noconfirm aria2 \
 		                   figlet \
 		                   freetype2 \
 		                   libevent \             
-		                   megatools \
+		                   megatools-git \
                                    openssh \
                                    p7zip \
 		                   postgresql \
