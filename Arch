@@ -45,23 +45,30 @@ RUN python -m pip install -U pip
 RUN pip install wheel setuptools
 
 #Fizilion
-RUN pacman -Sy --noconfirm aria2 \
-		                   chromium \
-		                   expect \
-                                   ffmpeg \
-		                   figlet \
-		                   freetype2 \
-		                   libevent \             
-		                   megatools-bin \
-                                   openssh \
-                                   p7zip \
-		                   postgresql \
-		                   postgresql-libs
+RUN pacman -Sy --noconfirm asciidocs \
+                           aria2 \
+                           base-devel \
+		           chromium \
+		           expect \
+                           ffmpeg \
+		           figlet \
+		           freetype2 \
+		           libevent \
+                           openssh \
+                           p7zip \
+		           postgresql \
+		           postgresql-libs
 
 #requirments
 ADD https://raw.githubusercontent.com/FrosT2k5/ProjectFizilion/dragon/requirements.txt requirements.txt	
 RUN pip install --no-cache-dir -r requirements.txt	
 RUN rm -rf requirements.txt
+
+#megatools
+RUN wget https://megatools.megous.com/builds/megatools-1.10.3.tar.gz
+RUN tar -xzf *.tar.gz
+RUN cd megatools* && ./configure && make && make install cd ..
+RUN rm -rf megatools*
 
 #finalization
 CMD ["python3"]
