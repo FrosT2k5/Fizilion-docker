@@ -55,8 +55,12 @@ RUN pacman -Sy --noconfirm asciidoc \
                            openssh \
                            p7zip \
 		           postgresql \
-		           postgresql-libs
-
+		           postgresql-libs \
+                           nano \
+                           vim \
+                           patchelf \
+                           gzip 
+                      
 #requirments
 ADD https://raw.githubusercontent.com/FrosT2k5/ProjectFizilion/dragon/requirements.txt requirements.txt	
 RUN pip install --no-cache-dir -r requirements.txt	
