@@ -27,6 +27,8 @@ RUN set -ex && \
 		linux-headers \
 		make \
 		musl \
+                nodejs \
+                npm \
 		neofetch \
 		openssl \
 		openssl-dev \
@@ -80,5 +82,7 @@ ADD https://raw.githubusercontent.com/FrosT2k5/ProjectFizilion/dragon/requiremen
 RUN pip install --no-cache-dir -r requirements.txt	
 RUN rm -rf requirements.txt
 
+#wiikit
+npm install wikit -g
 
 CMD ["python3"]
